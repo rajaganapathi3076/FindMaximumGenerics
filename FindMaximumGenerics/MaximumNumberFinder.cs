@@ -8,9 +8,9 @@ namespace FindMaximumGenerics
 {
     internal class MaximumNumberFinder
     {
-        public static int FindMaximumNumber(int num1, int num2, int num3)
+        public static float FindMaximumNumber(float num1, float num2, float num3)
         {
-            int maxNumber = num1;
+            float maxNumber = num1;
 
             if (num2.CompareTo(maxNumber) > 0)
             {
@@ -24,5 +24,7 @@ namespace FindMaximumGenerics
 
             return maxNumber;
         }
+
     }
+    
 }
