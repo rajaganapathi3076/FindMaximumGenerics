@@ -6,23 +6,39 @@ using System.Threading.Tasks;
 
 namespace FindMaximumGenerics
 {
-    internal class MaximumNumberFinder
+    public class MaximumValueFinder<T> where T : IComparable<T>
     {
-        public static float FindMaximumNumber(float num1, float num2, float num3)
+        private T value1;
+        private T value2;
+        private T value3;
+
+        public MaximumValueFinder(T value1, T value2, T value3)
         {
-            float maxNumber = num1;
+            this.value1 = value1;
+            this.value2 = value2;
+            this.value3 = value3;
+        }
 
-            if (num2.CompareTo(maxNumber) > 0)
+        public T FindMaximum()
+        {
+            return MaximumValueFinder.FindMaximumValue(value1, value2, value3);
+        }
+
+        private static T FindMaximumValue(T value1, T value2, T value3)
+        {
+            T maxValue = value1;
+
+            if (value2.CompareTo(maxValue) > 0)
             {
-                maxNumber = num2;
+                maxValue = value2;
             }
 
-            if (num3.CompareTo(maxNumber) > 0)
+            if (value3.CompareTo(maxValue) > 0)
             {
-                maxNumber = num3;
+                maxValue = value3;
             }
 
-            return maxNumber;
+            return maxValue;
         }
 
     }
