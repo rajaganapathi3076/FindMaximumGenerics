@@ -24,7 +24,10 @@ namespace FindMaximumGenerics
 
             values.Sort();
 
-            return values[values.Count - 1];
+            T max = values[values.Count - 1];
+            Console.WriteLine(max);
+
+            return max;
         }
 
     }
