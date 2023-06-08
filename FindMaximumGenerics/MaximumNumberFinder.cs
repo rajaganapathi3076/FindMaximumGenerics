@@ -8,37 +8,23 @@ namespace FindMaximumGenerics
 {
     public class MaximumValueFinder<T> where T : IComparable<T>
     {
-        private T value1;
-        private T value2;
-        private T value3;
+        private List<T> values;
 
-        public MaximumValueFinder(T value1, T value2, T value3)
+        public MaximumValueFinder(params T[] values)
         {
-            this.value1 = value1;
-            this.value2 = value2;
-            this.value3 = value3;
+            this.values = new List<T>(values);
         }
 
         public T FindMaximum()
         {
-            return MaximumValueFinder.FindMaximumValue(value1, value2, value3);
-        }
-
-        private static T FindMaximumValue(T value1, T value2, T value3)
-        {
-            T maxValue = value1;
-
-            if (value2.CompareTo(maxValue) > 0)
+            if (values.Count == 0)
             {
-                maxValue = value2;
+                throw new InvalidOperationException("No values provided.");
             }
 
-            if (value3.CompareTo(maxValue) > 0)
-            {
-                maxValue = value3;
-            }
+            values.Sort();
 
-            return maxValue;
+            return values[values.Count - 1];
         }
 
     }
