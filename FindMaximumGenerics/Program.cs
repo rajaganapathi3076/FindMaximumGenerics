@@ -4,17 +4,17 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to FindMaximumString UC2");
-        string max1 = MaximumStringFinder.FindMaximumString("Apple", "Peach", "Banana");
-        Console.WriteLine("Max String: " + max1); 
+        Console.WriteLine("Welcome to MaximumValueFinder Refactor 1");
+        int maxInt = MaximumValueFinder.FindMaximumValue(10, 5, 7);
+        Console.WriteLine("Max Integer: " + maxInt); 
 
         
-        string max2 = MaximumStringFinder.FindMaximumString("Apple", "Orange", "Banana");
-        Console.WriteLine("Max String: " + max2); 
+        float maxFloat = MaximumValueFinder.FindMaximumValue(4.7f, 8.9f, 3.2f);
+        Console.WriteLine("Max Float: " + maxFloat); 
 
-       
-        string max3 = MaximumStringFinder.FindMaximumString("Grapes", "Mango", "Pineapple");
-        Console.WriteLine("Max String: " + max3);
+        
+        string maxString = MaximumValueFinder.FindMaximumValue("Apple", "Orange", "Banana");
+        Console.WriteLine("Max String: " + maxString);
     }
 }
     
